@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for msg in meassages %}
+    {{msg}}
+    {% endfor %}
+    <br><br>
+    <h2 style="text-align:center ;"><b>
+        <i>LOGIN</i>
+    </b></h2>
+    <br><br>
+    <form action="" method="post" style="align-content:center ;">   
+         {% csrf_token %}
+    <table style="align-items:center ;">
+        <tr>
+            {{form.as_table}}
+        </tr>
+    </table>
+    <input type="submit" value="LOGIN">
+    <br><br><br>
+
+    
+</form>
+<a href="{% url 'app1:signup' %}">Create Account</a> 
+{% endblock %}
